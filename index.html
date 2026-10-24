@@ -13,7 +13,7 @@
 <meta property="og:title" content="AKTUG CONSTRUCTION · Gros œuvre et maçonnerie générale">
 <meta property="og:description" content="Nous construisons ce qui porte tout le reste. Villas d'architecte, maisons individuelles, bâtiments. Tous modes constructifs. Calvisson, Gard, Occitanie.">
 <meta property="og:url" content="https://aktug-construction.fr/">
-<meta property="og:image" content="https://aktug-construction.fr/img/hero-villa.jpg">
+<meta property="og:image" content="https://aktug-construction.fr/img/hero-villa-blanche.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/BarlowCondensed-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -24,7 +24,7 @@
   "@type": "GeneralContractor",
   "name": "AKTUG CONSTRUCTION",
   "url": "https://aktug-construction.fr/",
-  "image": "https://aktug-construction.fr/img/hero-villa.jpg",
+  "image": "https://aktug-construction.fr/img/hero-villa-blanche.jpg",
   "legalName": "AKTUG CONSTRUCTION SARL",
   "description": "Entreprise de gros œuvre et de maçonnerie générale. Villas d'architecte, maisons individuelles et bâtiments dans le Gard, l'Hérault et en Occitanie.",
   "email": "aktug.construction@gmail.com",
@@ -106,7 +106,7 @@ p{margin:0}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;color:#F4F1EB;background:#1a1b1e;overflow:hidden}
-.hero img{width:100%;height:min(82vh,760px);object-fit:cover;object-position:center 60%;opacity:.92;animation:reveal 1.6s ease-out both}
+.hero img{width:100%;height:min(82vh,760px);object-fit:cover;object-position:center 45%;opacity:.92;animation:reveal 1.6s ease-out both}
 @keyframes reveal{from{transform:scale(1.04);opacity:.4}to{transform:none;opacity:.92}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.05) 40%,rgba(0,0,0,.72) 100%)}
 .hero .wrap{position:absolute;inset:auto 0 0 0;z-index:2;padding-block:2.5rem clamp(2rem,5vw,4rem)}
@@ -117,7 +117,6 @@ p{margin:0}
 .hero-foot p{font-family:var(--ui);font-size:.95rem;max-width:30em;color:#D9D4CB;line-height:1.5}
 .hero .btn{color:#F4F1EB}
 .hero .btn:hover{background:#F4F1EB;color:#17181B;border-color:#F4F1EB}
-.provisoire{position:absolute;top:12px;right:max(12px,env(safe-area-inset-right,0px));z-index:3;font-family:var(--ui);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.45);color:#F4F1EB;padding:.4em .7em;backdrop-filter:blur(4px)}
 
 /* ---------- Sections ---------- */
 section{padding-block:clamp(4rem,9vw,8rem)}
@@ -253,8 +252,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:1.2rem}
 <main>
   <!-- ===== ACCUEIL ===== -->
   <section class="hero" id="accueil" style="padding:0">
-    <span class="provisoire">Photo provisoire · libre de droits</span>
-    <img src="img/hero-villa.jpg" alt="Villa contemporaine à toit plat avec piscine à débordement, façades blanches et grandes baies vitrées" width="1600" height="1200" fetchpriority="high">
+    <img src="img/hero-villa-blanche.jpg" alt="Villa contemporaine à toit-terrasse construite par AKTUG CONSTRUCTION, façades enduites blanches sous le soleil du Gard" width="1800" height="1350" fetchpriority="high">
     <div class="wrap">
       <p class="eyebrow">Gros œuvre · Calvisson, Gard · Occitanie</p>
       <h1>Nous construisons<br>ce qui porte<br><span>tout le reste.</span></h1>
@@ -290,58 +288,66 @@ footer nav{display:flex;flex-wrap:wrap;gap:1.2rem}
     <div class="wrap">
       <div class="sec-head">
         <div><p class="eyebrow">Nos réalisations</p><h2 style="margin-top:1rem">Des ouvrages<br>qui tiennent debout<br>et qui tiennent parole.</h2></div>
-        <p class="lede">Une sélection de chantiers, du terrassement à la dernière passe de maçonnerie. Les fiches ci-dessous attendent nos propres photos : les visuels marqués « provisoire » seront remplacés par des vues de chantier réelles.</p>
+        <p class="lede">Une sélection de nos chantiers dans le Gard et l'Hérault, du terrassement à la dernière passe de maçonnerie : villas d'architecte, maisons individuelles, logements collectifs, rénovation lourde.</p>
       </div>
 
       <div class="gallery">
         <article class="frame span2 row2">
-          <div class="ph"><img src="img/villa-blanche.jpg" alt="Villa cubique blanche à étage avec piscine et terrasse, architecture contemporaine" loading="lazy"><span class="mark">Photo provisoire</span></div>
-          <div class="cap"><h3>Villa d'architecte <span class="todo">À compléter</span></h3><p>Commune, année, architecte · à renseigner</p><div class="tags"><span class="tag">Béton armé</span><span class="tag">Voiles</span><span class="tag">Dalle pleine</span></div></div>
+          <div class="ph"><img src="img/villa-architecte-piscine.jpg" alt="Villa d'architecte à toit-terrasse avec piscine, gros œuvre et enduits terminés" loading="lazy"></div>
+          <div class="cap"><h3>Villa d'architecte</h3><p>Toit-terrasse, piscine, enduits · Gard</p><div class="tags"><span class="tag">Béton armé</span><span class="tag">Voiles</span><span class="tag">Toit-terrasse</span><span class="tag">Piscine</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><img src="img/ferraillage.jpg" alt="Chantier de gros œuvre : ferraillage de plancher en cours de pose" loading="lazy"><span class="mark">Photo provisoire</span></div>
-          <div class="cap"><h3>Plancher béton armé <span class="todo">À compléter</span></h3><p>Commune, année · à renseigner</p><div class="tags"><span class="tag">Ferraillage</span><span class="tag">Coulage</span></div></div>
+          <div class="ph"><img src="img/voiles-banche.jpg" alt="Voiles en béton banché laissés bruts, avec leurs réservations de baies" loading="lazy"></div>
+          <div class="cap"><h3>Voiles en béton banché</h3><p>Béton brut apparent, calepinage des banches</p><div class="tags"><span class="tag">Béton banché</span><span class="tag">Béton brut</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><span class="empty"><span>Emplacement réservé<br>Votre photo de chantier</span></span></div>
-          <div class="cap"><h3>Maison individuelle <span class="todo">À compléter</span></h3><p>Commune, année · à renseigner</p><div class="tags"><span class="tag">Maçonnerie</span><span class="tag">Poutrelles-hourdis</span></div></div>
+          <div class="ph"><img src="img/collectif-predalles.jpg" alt="Pose de prédalles préfabriquées sur un bâtiment de logements collectifs" loading="lazy"></div>
+          <div class="cap"><h3>Logements collectifs</h3><p>Plancher en prédalles préfabriquées</p><div class="tags"><span class="tag">Préfabriqué</span><span class="tag">Prédalles</span><span class="tag">Collectif</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><img src="img/poteaux-beton.jpg" alt="Poteaux en béton armé en cours de ferraillage sur un chantier de bâtiment" loading="lazy"><span class="mark">Photo provisoire</span></div>
-          <div class="cap"><h3>Structure poteaux-poutres <span class="todo">À compléter</span></h3><p>Commune, année · à renseigner</p><div class="tags"><span class="tag">Béton armé</span><span class="tag">Poteaux-poutres</span></div></div>
+          <div class="ph"><img src="img/piscine-beton.jpg" alt="Radier d'une piscine en béton armé fraîchement coulé, attentes des voiles en place" loading="lazy"></div>
+          <div class="cap"><h3>Piscine en béton armé</h3><p>Radier et voiles coulés en place</p><div class="tags"><span class="tag">Radier</span><span class="tag">Voiles</span><span class="tag">Piscine</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><span class="empty"><span>Emplacement réservé<br>Votre photo de chantier</span></span></div>
-          <div class="cap"><h3>Rénovation lourde <span class="todo">À compléter</span></h3><p>Commune, année · à renseigner</p><div class="tags"><span class="tag">Reprise en sous-œuvre</span><span class="tag">Pierre</span></div></div>
+          <div class="ph"><img src="img/ferraillage-plancher.jpg" alt="Ferraillage d'une dalle pleine prêt pour le coulage, vue sur la plaine" loading="lazy"></div>
+          <div class="cap"><h3>Dalle pleine en béton armé</h3><p>Ferraillage vérifié avant coulage</p><div class="tags"><span class="tag">Béton armé</span><span class="tag">Dalle pleine</span></div></div>
         </article>
         <article class="frame span2">
-          <div class="ph"><img src="img/villa-nuit.jpg" alt="Maison contemporaine de plain-pied éclairée de nuit, bardage sombre et grandes ouvertures" loading="lazy"><span class="mark">Photo provisoire</span></div>
-          <div class="cap"><h3>Maison contemporaine <span class="todo">À compléter</span></h3><p>Commune, année, architecte · à renseigner</p><div class="tags"><span class="tag">Fondations</span><span class="tag">Voiles béton</span><span class="tag">Toit-terrasse</span></div></div>
+          <div class="ph"><img src="img/villa-brique.jpg" alt="Élévation d'une villa en brique monomur avec poteaux et linteaux en béton armé" loading="lazy"></div>
+          <div class="cap"><h3>Villa en brique</h3><p>Monomur, poteaux et linteaux béton, chaînages</p><div class="tags"><span class="tag">Maçonnerie brique</span><span class="tag">Poteaux-linteaux</span><span class="tag">Maison individuelle</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><img src="img/maison-contemporaine.jpg" alt="Maison à étage avec volume en bardage bois et jardin engazonné" loading="lazy"><span class="mark">Photo provisoire</span></div>
-          <div class="cap"><h3>Extension et surélévation <span class="todo">À compléter</span></h3><p>Commune, année · à renseigner</p><div class="tags"><span class="tag">Ossature mixte</span></div></div>
+          <div class="ph"><img src="img/renovation-ouvertures.jpg" alt="Création d'une grande ouverture dans un mur porteur existant, étaiement et coffrage en place" loading="lazy"></div>
+          <div class="cap"><h3>Rénovation lourde</h3><p>Création d'ouvertures dans des murs porteurs</p><div class="tags"><span class="tag">Reprise en sous-œuvre</span><span class="tag">Ouvertures</span><span class="tag">Rénovation</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><span class="empty"><span>Emplacement réservé<br>Votre photo de chantier</span></span></div>
-          <div class="cap"><h3>Bâtiment collectif <span class="todo">À compléter</span></h3><p>Commune, année, maître d'ouvrage · à renseigner</p><div class="tags"><span class="tag">Béton banché</span><span class="tag">Préfabriqué</span></div></div>
+          <div class="ph"><img src="img/collectif-maconnerie.jpg" alt="Murs en brique et poteaux béton d'un bâtiment collectif, armatures prêtes à poser au premier plan" loading="lazy"></div>
+          <div class="cap"><h3>Logements collectifs</h3><p>Maçonnerie brique et poteaux béton armé</p><div class="tags"><span class="tag">Maçonnerie</span><span class="tag">Poteaux béton</span><span class="tag">Collectif</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><img src="img/villa-mediterranee.jpg" alt="Villa méditerranéenne blanche aux volumes cubiques sous un pin" loading="lazy"><span class="mark">Photo provisoire</span></div>
-          <div class="cap"><h3>Villa méditerranéenne <span class="todo">À compléter</span></h3><p>Commune, année · à renseigner</p><div class="tags"><span class="tag">Maçonnerie</span><span class="tag">Enduit</span></div></div>
+          <div class="ph"><img src="img/mur-soutenement.jpg" alt="Mur de soutènement en blocs à bancher sur un terrain en pente" loading="lazy"></div>
+          <div class="cap"><h3>Mur de soutènement</h3><p>Blocs à bancher, terrain en pente</p><div class="tags"><span class="tag">Soutènement</span><span class="tag">Terrassement</span><span class="tag">Maçonnerie</span></div></div>
         </article>
         <article class="frame">
-          <div class="ph"><span class="empty"><span>Emplacement réservé<br>Votre photo de chantier</span></span></div>
-          <div class="cap"><h3>Hangar et habitation <span class="todo">À compléter</span></h3><p>Commune, année · à renseigner</p><div class="tags"><span class="tag">VRD</span><span class="tag">Terrassement</span><span class="tag">Dallage</span></div></div>
+          <div class="ph"><img src="img/sous-sol-pente.jpg" alt="Sous-sol en béton armé construit dans la pente, plancher ferraillé avant coulage" loading="lazy"></div>
+          <div class="cap"><h3>Sous-sol sur terrain en pente</h3><p>Fondations, voiles enterrés, plancher haut</p><div class="tags"><span class="tag">Fondations</span><span class="tag">Voiles enterrés</span><span class="tag">Plancher</span></div></div>
+        </article>
+        <article class="frame">
+          <div class="ph"><img src="img/plancher-poutrelles.jpg" alt="Poutrelles béton posées sur les murs d'une maison, avant les entrevous et la dalle de compression" loading="lazy"></div>
+          <div class="cap"><h3>Plancher poutrelles-hourdis</h3><p>Pose des poutrelles sur vide sanitaire</p><div class="tags"><span class="tag">Poutrelles-hourdis</span><span class="tag">Maison individuelle</span></div></div>
+        </article>
+        <article class="frame">
+          <div class="ph"><img src="img/fondations-longrines.jpg" alt="Fondations et longrines coffrées d'une maison individuelle, terrassement terminé" loading="lazy"></div>
+          <div class="cap"><h3>Fondations et longrines</h3><p>Terrassement, semelles et longrines</p><div class="tags"><span class="tag">Fondations</span><span class="tag">Longrines</span><span class="tag">VRD</span></div></div>
         </article>
       </div>
-      <p class="gal-note">Chaque fiche recevra : une à trois photos, la commune, l'année, le mode constructif et, avec son accord, le nom de l'architecte ou du maître d'ouvrage. Aucune référence n'est publiée sans validation.</p>
+      <p class="gal-note">Photos prises sur nos chantiers par nos équipes. Les noms des architectes et des maîtres d'ouvrage ne sont publiés qu'avec leur accord.</p>
     </div>
   </section>
 
   <figure class="band" style="margin:0">
-    <img src="img/dalle-chantier.jpg" alt="Vue aérienne d'un chantier : plancher ferraillé avant coulage et équipe en gilets de sécurité" loading="lazy">
-    <figcaption>Photo provisoire, libre de droits · Préparation d'un plancher avant coulage</figcaption>
+    <img src="img/bandeau-chantier.jpg" alt="Chantier AKTUG CONSTRUCTION : voiles en béton banché et coffrage de plancher sous les pins" loading="lazy">
+    <figcaption>Voiles banchés et coffrage de plancher · chantier AKTUG CONSTRUCTION</figcaption>
   </figure>
 
   <!-- ===== SAVOIR-FAIRE ===== -->
@@ -397,8 +403,8 @@ footer nav{display:flex;flex-wrap:wrap;gap:1.2rem}
   <section class="entreprise" id="entreprise">
     <div class="wrap grid">
       <figure>
-        <img src="img/plans.jpg" alt="Mains d'un professionnel annotant des plans de construction à la règle" loading="lazy">
-        <figcaption>Photo provisoire, libre de droits</figcaption>
+        <img src="img/entreprise-voiles.jpg" alt="Voiles en béton brut et échafaudages sur un chantier AKTUG CONSTRUCTION" loading="lazy">
+        <figcaption>Sur l'un de nos chantiers</figcaption>
       </figure>
       <div>
         <p class="eyebrow">L'entreprise</p>
@@ -470,7 +476,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:1.2rem}
 
       <h3>Propriété intellectuelle</h3>
       <p>L'ensemble des textes, de la structure et de la charte graphique de ce site est la propriété d'AKTUG CONSTRUCTION. Toute reproduction, même partielle, est soumise à autorisation écrite préalable.</p>
-      <p>Certaines photographies de ce site sont des images provisoires issues de banques d'images libres de droits (licence Unsplash) et ne représentent pas des chantiers réalisés par AKTUG CONSTRUCTION. Elles sont signalées comme telles et seront remplacées par des photographies de nos propres réalisations.</p>
+      <p>Les photographies de ce site ont été prises sur les chantiers d'AKTUG CONSTRUCTION et sont sa propriété.</p>
 
       <h3>Données personnelles (RGPD)</h3>
       <p>Les informations saisies dans le formulaire de contact (nom, adresse e-mail, commune, description du projet) sont collectées sur la base de votre consentement et de notre intérêt légitime à répondre à votre demande. Le responsable du traitement est AKTUG CONSTRUCTION.</p>
