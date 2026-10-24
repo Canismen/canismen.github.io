@@ -77,7 +77,7 @@
   }
 
   /* ----- Galerie : filtres ----- */
-  var filters = $$('.filters button'), frames = $$('.gallery .frame');
+  var filters = $$('.filters button'), frames = $$('.gallery .frame, .strip .card');
   filters.forEach(function (b) {
     b.addEventListener('click', function () {
       filters.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
@@ -138,6 +138,48 @@
       if (touchX === null) return; var dx = e.changedTouches[0].clientX - touchX; touchX = null;
       if (Math.abs(dx) > 50) show(dx < 0 ? idx + 1 : idx - 1);
     }, { passive: true });
+  }
+
+  /* ----- Défilement horizontal des réalisations ----- */
+  var strip = $('.strip');
+  if (strip) {
+    var prog = $('.strip-prog b'), prev = $('.strip-prev'), next = $('.strip-next');
+    function cardW() { var c = strip.querySelector('.card:not(.hidden)'); return c ? c.getBoundingClientRect().width + parseFloat(getComputedStyle(strip).columnGap || getComputedStyle(strip).gap || 16) : 320; }
+    function update() {
+      var max = strip.scrollWidth - strip.clientWidth;
+      if (!prog) return;
+      var ratio = Math.max(.08, strip.clientWidth / strip.scrollWidth);
+      prog.style.width = (ratio * 100) + '%';
+      prog.style.left = (max > 0 ? (strip.scrollLeft / max) * (100 - ratio * 100) : 0) + '%';
+    }
+    strip.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+    window.addEventListener('resize', update);
+    if (prev) prev.addEventListener('click', function () { strip.scrollBy({ left: -cardW() * 2, behavior: reduced ? 'auto' : 'smooth' }); });
+    if (next) next.addEventListener('click', function () { strip.scrollBy({ left: cardW() * 2, behavior: reduced ? 'auto' : 'smooth' }); });
+    filters.forEach(function (b) { b.addEventListener('click', function () { strip.scrollTo({ left: 0 }); setTimeout(update, 50); }); });
+    update();
+  }
+
+  /* ----- Savoir-faire : liste interactive et image ----- */
+  var show = $('.show');
+  if (show) {
+    var sitems = $$('.show-item', show), figImgs = $$('.show-fig img', show), cap = $('.show-fig figcaption', show);
+    function activate(it) {
+      sitems.forEach(function (x) { var on = x === it; x.classList.toggle('active', on); $('button', x).setAttribute('aria-expanded', on ? 'true' : 'false'); });
+      var key = it.getAttribute('data-img');
+      figImgs.forEach(function (im) {
+        var on = im.getAttribute('data-key') === key;
+        if (on && !im.getAttribute('src')) { im.src = im.getAttribute('data-src'); var ss = im.getAttribute('data-srcset'); if (ss) im.srcset = ss; }
+        im.classList.toggle('on', on);
+      });
+      if (cap) cap.textContent = $('h3', it).firstChild.textContent.trim();
+      var mi = $('.mob-img img', it); if (mi && !mi.getAttribute('src')) mi.src = mi.getAttribute('data-src');
+    }
+    sitems.forEach(function (it) {
+      $('button', it).addEventListener('click', function () { activate(it); });
+      it.addEventListener('mouseenter', function () { if (window.matchMedia('(min-width:980px)').matches) activate(it); });
+    });
+    if (sitems.length) activate(sitems[0]);
   }
 
   /* ----- Copier l'adresse e-mail ----- */
