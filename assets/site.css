@@ -363,6 +363,7 @@ footer li{padding:.3em 0}
 footer a{color:#E3DED5;text-decoration:none}
 footer a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
 footer address{font-style:normal;line-height:1.7;color:#E3DED5}
+footer .social{margin-top:.9rem;font-family:var(--sans);font-size:.92rem;letter-spacing:.04em}footer .social a{color:var(--laiton-clair)}footer .social a:hover{color:#fff}
 footer .legal{margin-top:2.8rem;padding-top:1.4rem;border-top:1px solid var(--ligne-d);display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;font-size:.76rem;color:#8A857D;letter-spacing:.04em}
 footer .legal a{color:var(--brume)}
 
