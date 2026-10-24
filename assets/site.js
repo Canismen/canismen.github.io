@@ -12,7 +12,7 @@
 
   /* ----- Navigation ----- */
   var nav = $('.nav'), btn = $('#menuBtn'), panel = $('#menuPanel');
-  function onScroll() { if (nav) nav.classList.toggle('scrolled', window.scrollY > 8); }
+  function onScroll() { if (nav) nav.classList.toggle('scrolled', window.scrollY > 24); }
   onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
   function setMenu(open) {
     if (!btn || !panel) return;
@@ -46,8 +46,8 @@
     Object.keys(map).forEach(function (id) { io.observe(d.getElementById(id)); });
   }
 
-  /* ----- Apparition au défilement ----- */
-  var reveals = $$('.reveal');
+  /* ----- Apparitions au défilement (textes et images) ----- */
+  var reveals = $$('.reveal, .reveal-img');
   if (reveals.length) {
     if (reduced || !('IntersectionObserver' in window)) { reveals.forEach(function (el) { el.classList.add('in'); }); }
     else {
@@ -56,6 +56,24 @@
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
       reveals.forEach(function (el) { ro.observe(el); });
     }
+  }
+
+  /* ----- Parallaxe douce du bandeau ----- */
+  var para = $$('[data-parallax] img');
+  if (para.length && !reduced && window.matchMedia('(min-width: 900px)').matches) {
+    var ticking = false;
+    function parallax() {
+      para.forEach(function (img) {
+        var r = img.parentElement.parentElement.getBoundingClientRect();
+        var vh = window.innerHeight;
+        if (r.bottom < 0 || r.top > vh) return;
+        var p = (r.top + r.height / 2 - vh / 2) / vh; /* -1 .. 1 */
+        img.style.transform = 'translateY(' + (p * -8) + '%)';
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(parallax); ticking = true; } }, { passive: true });
+    parallax();
   }
 
   /* ----- Galerie : filtres ----- */
@@ -142,10 +160,9 @@
       e.preventDefault();
       var nom = fields.nom.value.trim(), mail = fields.email.value.trim(), msg = fields.message.value.trim();
       var type = $('#f-type').value, commune = $('#f-commune').value.trim(), ok = fields.rgpd.checked;
-      var bad = false;
-      mark(fields.nom, !nom); mark(fields.email, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)); mark(fields.message, !msg); mark(fields.rgpd, !ok);
-      bad = !nom || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail) || !msg || !ok;
-      if (bad) { status.className = 'status show'; status.innerHTML = '<strong>Il manque une information.</strong> Vérifiez les champs signalés : nom, e-mail, description du projet et case de consentement.'; return; }
+      var mailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
+      mark(fields.nom, !nom); mark(fields.email, !mailOk); mark(fields.message, !msg); mark(fields.rgpd, !ok);
+      if (!nom || !mailOk || !msg || !ok) { status.className = 'status show'; status.innerHTML = '<strong>Il manque une information.</strong> Vérifiez les champs signalés : nom, e-mail, description du projet et case de consentement.'; return; }
       var submit = form.querySelector('button[type=submit]'); submit.disabled = true; submit.textContent = 'Envoi en cours…';
       status.className = 'status show'; status.textContent = 'Envoi en cours…';
       var payload = { nom: nom, email: mail, type: type, commune: commune || 'non précisée', message: msg, _subject: 'Site AKTUG CONSTRUCTION — demande de ' + nom, _template: 'table', _captcha: 'false', _honey: $('#f-site').value };
