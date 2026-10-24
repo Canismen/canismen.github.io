@@ -428,7 +428,8 @@ footer .legal a{color:var(--brume)}
 .panel{position:relative;min-height:88svh;display:grid;place-items:center;text-align:center;color:var(--ivoire);background:var(--noir);overflow:hidden;isolation:isolate;margin:0;padding:0}
 .panel picture{position:absolute;inset:-12% 0;display:block}
 .panel img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);will-change:transform}
-.panel::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at center,rgba(14,15,17,.55) 0%,rgba(14,15,17,.25) 55%,rgba(14,15,17,.7) 100%),linear-gradient(180deg,rgba(14,15,17,.6),rgba(14,15,17,.1) 30%,rgba(14,15,17,.1) 70%,rgba(14,15,17,.7));z-index:1}
+.panel::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at center,rgba(14,15,17,.38) 0%,rgba(14,15,17,.18) 55%,rgba(14,15,17,.5) 100%),linear-gradient(180deg,rgba(14,15,17,.5),rgba(14,15,17,.06) 30%,rgba(14,15,17,.06) 70%,rgba(14,15,17,.6));z-index:1}
+.panel h2,.panel p{text-shadow:0 2px 24px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.4)}
 .panel .wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1.8rem;padding-block:clamp(5rem,12vh,8rem)}
 .panel h2{font-size:clamp(2.5rem,5.6vw,5rem);font-weight:400;max-width:14em;text-shadow:0 2px 36px rgba(0,0,0,.45)}
 .panel p{font-family:var(--sans);font-weight:300;color:#D9D3C8;max-width:36em;font-size:1.05rem;line-height:1.6}
